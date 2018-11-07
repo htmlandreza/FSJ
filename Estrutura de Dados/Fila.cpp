@@ -55,6 +55,10 @@ int estaCheia( struct Fila *f ) { // retorna verdadeiro se a fila está cheia
 	return (f->nItens == f->capacidade);
 }
 
+void mostrarPrimeiro(struct Fila *f){
+		printf("%d",f->dados[f->primeiro]);
+}
+
 void mostrarFila(struct Fila *f){
 
 	int cont, i;
@@ -86,7 +90,7 @@ main () {
 		printf("*****   EDITOR DE FILA   *****");
 		printf("\n1 - ADICIONAR");
 		printf("\n2 - EXCLUIR"); 
-		printf("\n3 - EXIBIR PRIMEIRO ELEMENTO"); //incompleto
+		printf("\n3 - EXIBIR PRIMEIRO ELEMENTO");
 		printf("\n4 - EXIBIR FILA");
 		printf("\n5 - ESVAZIAR"); //incompleto
 		printf("\n0 - SAIR");
@@ -126,12 +130,31 @@ main () {
 					printf("*****   Excluindo primeiro item da fila   *****");
 					valor = remover(&umaFila);
 					printf("\n\n\n O valor %d foi removido da fila com sucesso.", valor);
-					printf("\n\n\n*****   Fila atualizada   *****\n");
+					printf("\n\n\n*****   Fila atualizada   *****\n\n");
 					mostrarFila(&umaFila);
 					printf("\n\n\nPressione qualquer tecla para continuar. . .");
 					getch(); 
 				}
 				
+				break;
+				
+				case 3: // exibir primeiro
+				if (estaVazia(&umaFila)){
+					system("cls");
+					printf("*****   Fila Vazia!!!   *****");
+					printf("\n\n\nPressione qualquer tecla para continuar. . .");
+					
+					getch();
+				}
+				else {
+					system("cls");
+					printf("*****   Primeiro da Fila   *****\n\n");
+					mostrarPrimeiro(&umaFila);
+					printf("\n\n\n*****   Fila completa   *****\n\n");
+					mostrarFila(&umaFila);
+					printf("\n\n\nPressione qualquer tecla para continuar. . .");
+					getch();
+				}
 				break;
 				
 			case 4: // exibir fila
@@ -150,6 +173,33 @@ main () {
 					getch();
 				}
 				break;
+			
+			case 5: //esvaziar - com erro
+			if (estaVazia(&umaFila)){
+					system("cls");
+					printf("*****   Fila Vazia!!!   *****");
+					printf("\n\n\nPressione qualquer tecla para continuar. . .");
+					
+					getch();
+				}
+			else{
+                 do{
+					system("cls");
+					
+					printf("*****   A fila foi esvaziada!   *****\n\n");
+            }
+                 while !(estaVazia(&umaFila)
+                 {
+                 valor=remover(&umaFila);
+                 }
+                 
+                }
+			
+						
+			printf("\n\n\nPressione qualquer tecla para continuar. . .");
+			getch();
+			
+			break;
 		
 				default:
 					system("cls");
