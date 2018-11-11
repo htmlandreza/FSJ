@@ -92,7 +92,7 @@ main () {
 		printf("\n2 - EXCLUIR"); 
 		printf("\n3 - EXIBIR PRIMEIRO ELEMENTO");
 		printf("\n4 - EXIBIR FILA");
-		printf("\n5 - ESVAZIAR"); //incompleto
+		printf("\n5 - ESVAZIAR");
 		printf("\n0 - SAIR");
 		printf("\n\n DIGITE SUA OPCAO:... ");
 		scanf("%d", &opcao);
@@ -174,7 +174,7 @@ main () {
 				}
 				break;
 			
-			case 5: //esvaziar - com erro
+			case 5: //esvaziar
 			if (estaVazia(&umaFila)){
 					system("cls");
 					printf("*****   Fila Vazia!!!   *****");
@@ -183,19 +183,13 @@ main () {
 					getch();
 				}
 			else{
-                 do{
-					system("cls");
-					
-					printf("*****   A fila foi esvaziada!   *****\n\n");
+				while (!estaVazia(&umaFila){
+					valor = remover(&umaFila);            
+               		}
+                system("cls");
+				printf("*****   A fila foi esvaziada!   *****\n\n");
             }
-                 while !(estaVazia(&umaFila)
-                 {
-                 valor=remover(&umaFila);
-                 }
-                 
-                }
-			
-						
+									
 			printf("\n\n\nPressione qualquer tecla para continuar. . .");
 			getch();
 			
