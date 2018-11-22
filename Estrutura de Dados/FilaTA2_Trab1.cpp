@@ -8,7 +8,7 @@
 
 //TRABALHO TA2 - CONSULTÓRIO MÉDICO
  
- #define MAX 5
+ #define MAX 30
 typedef struct{
 	char nome;
 	int rg;
