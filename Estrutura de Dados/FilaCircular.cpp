@@ -7,7 +7,7 @@
 //Andreza Moreira - Fila Circular 
 //TSI 2018.2
 
-#define MAX 3
+#define MAX 20
 typedef int telem;
 typedef struct {
 	telem v[MAX];
@@ -101,7 +101,7 @@ main (){
 			break;
 			case 6: fim=1;
 			break;
-			default: printf("Opção invalida");
+			default: printf("OpÃ§Ã£o invalida");
 			getch();
 		}
 	}
